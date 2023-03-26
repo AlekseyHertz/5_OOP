@@ -3,6 +3,12 @@ object WallService {
     private var comment = emptyArray<Comment>()
     private var lastId = 0
 
+    fun clear() {
+        posts = emptyArray<Post>()
+        comment = emptyArray<Comment>()
+        lastId = 0
+    }
+
     fun addPosts(post: Post): Post {
         posts += post.copy(id = lastId++)
         return posts.last()
